@@ -15,6 +15,10 @@ routes.post('/add',async(req,res)=>{
         }
         const productObj = new Products({productName,productPrice,productUnit,productDesc})
         await productObj.save()
+        res.json({
+            status:true,
+            message:"Product added successfully"
+        })
 
     }catch(err){
         return res.json({
