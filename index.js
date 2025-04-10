@@ -3,10 +3,12 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const User = require('./models/User.js')
+const routes = require('./routes/productRoutes.js')
 
 const server = express()
 server.use(cors())
 server.use(bodyParser.json())
+server.use('/product',routes)
 
 // Connection with MongoDB
 
